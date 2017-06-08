@@ -16,4 +16,6 @@ lftp -c "open -u $FTP_USER,$FTP_PASSWORD $FTP_SERVER; set ssl:verify-certificate
 lftp -c "open -u $FTP_USER,$FTP_PASSWORD $FTP_SERVER; set ssl:verify-certificate no; put -O /docs/ .htaccess"
 lftp -c "open -u $FTP_USER,$FTP_PASSWORD $FTP_SERVER; set ssl:verify-certificate no; put -O /docs/ web.config"
 
+lftp -c "open -u $FTP_WEB_USER,$FTP_WEB_PASSWORD $FTP_WEB_SERVER; set ssl:verify-certificate no; mirror -R no/ /no"
+
 

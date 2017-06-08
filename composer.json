@@ -16,6 +16,7 @@
     "vendor-dir": "lib"
   },
   "require": {
-    "michelf/php-markdown": "^1.7"
+    "michelf/php-markdown": "^1.7",
+    "scrivo/highlight.php": "8.*"
   }
 }

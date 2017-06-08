@@ -20,10 +20,9 @@ Options +FollowSymLinks -Multiviews -Indexes
 
 RewriteRule \.(properties)$ - [F]
 
-RewriteCond $1 !^(src|build)
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php?file=$1 [ENV=INDEX:true,L,QSA]
+RewriteRule ^(.*)$ index.php?__q__=$1 [ENV=INDEX:true,L,QSA]
 
 
 ############################################################################################
