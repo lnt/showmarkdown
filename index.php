@@ -12,12 +12,13 @@ namespace app\handler {
     class index extends AbstractHandler
     {
 
-        public $__q__ = "boilerplatez/docs/master/markdown/xampp/MAC.md";
+        public $__q__ = "lnt/snipit/master/README.md";
         public $parse = true;
         public $domain = "http://raw.githubusercontent.com/";
         public $empbed = null;
         public $lang = null;
         public $view = null;
+        public $md = null;
 
         public function getHighlight($file)
         {
@@ -39,15 +40,20 @@ namespace app\handler {
                 $r = $this->getHighlight($this->view);
                 printf("<link rel=\"stylesheet\" href=\"/lib/scrivo/highlight.php/styles/default.css\">
                         <div><pre class=\"hljs %s\" >%s</pre></div>", $r->language, $r->value);
+                exit();
             } else if (!empty($this->empbed)) {
                 header("Content-Type: application/javascript");
                 $r = $this->getHighlight($this->empbed);
                 printf("document.write('<link rel=\"stylesheet\" href=\"/lib/scrivo/highlight.php/styles/default.css\"><div><pre class=\"hljs %s\" >'+atob('%s')+'</pre></div>')", $r->language, base64_encode($r->value));
-            } else if (empty($this->__q__)) {
+                exit();
+            } else if (!empty($this->md)) {
+                $content = file_get_contents($this->md);
+                $content = MarkdownExtra::defaultTransform($content);
+                echo $content;
+                exit();
+            } else if (!empty($this->__q__)) {
                 $content = file_get_contents($this->domain . $this->__q__);
-                if ($this->parse) {
-                    $content = MarkdownExtra::defaultTransform($content);
-                }
+                $content = MarkdownExtra::defaultTransform($content);
                 echo $content;
                 exit();
             }
