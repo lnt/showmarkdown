@@ -26,7 +26,7 @@ namespace app\handler {
             $hl = new Highlighter();
             $r = null;
             if (empty($this->lang)) {
-                $hl->setAutodetectLanguages(array("ruby", "python", "perl", "javascript", "json"));
+                $hl->setAutodetectLanguages(array("ruby", "python", "perl", "javascript", "json", "css"));
                 $r = $hl->highlightAuto($content);
             } else {
                 $r = $hl->highlight($this->lang, $content);
@@ -38,13 +38,13 @@ namespace app\handler {
         {
             if (!empty($this->view)) {
                 $r = $this->getHighlight($this->view);
-                printf("<link rel=\"stylesheet\" href=\"/lib/scrivo/highlight.php/styles/default.css\">
+                printf("<link rel=\"stylesheet\" href=\"/lib/app/styles/default.css\">
                         <div><pre class=\"hljs %s\" >%s</pre></div>", $r->language, $r->value);
                 exit();
             } else if (!empty($this->empbed)) {
                 header("Content-Type: application/javascript");
                 $r = $this->getHighlight($this->empbed);
-                printf("document.write('<link rel=\"stylesheet\" href=\"/lib/scrivo/highlight.php/styles/default.css\"><div><pre class=\"hljs %s\" >'+atob('%s')+'</pre></div>')", $r->language, base64_encode($r->value));
+                printf("document.write('<link rel=\"stylesheet\" href=\"/app/styles/default.css\"><div><pre class=\"hljs %s\" >'+atob('%s')+'</pre></div>')", $r->language, base64_encode($r->value));
                 exit();
             } else if (!empty($this->md)) {
                 $content = file_get_contents($this->md);
