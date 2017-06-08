@@ -3,7 +3,7 @@
 namespace app\handler {
 
     include_once "lib/autoload.php";
-    include_once "AbstractHandler.php";
+    include_once "app/handler/AbstractHandler.php";
 
     use Michelf\Markdown;
     use Michelf\MarkdownExtra;
