@@ -1,0 +1,16 @@
+{
+  "name": "lnt/showmarkdown",
+  "description": "online parsing of markdown",
+  "config": {
+    "vendor-dir": "lib"
+  },
+  "authors": [
+    {
+      "name": "Lalit Tanwar",
+      "email": "lalit.tanwar07@gmail.com"
+    }
+  ],
+  "require": {
+    "michelf/php-markdown": "^1.7"
+  }
+}

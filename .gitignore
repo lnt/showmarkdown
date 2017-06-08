@@ -1,0 +1,12 @@
+.idea
+/node_modules
+/lib
+/src/external
+/build
+.project
+.brackets.json
+*iml
+.DS_Store
+composer.lock
+src/external/components
+config
