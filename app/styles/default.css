@@ -4,7 +4,7 @@ Original style from softwaremaniacs.org (c) Ivan Sagalaev <Maniac@SoftwareManiac
 
 */
 
-.hljs {
+.hljs,pre code {
   display: block;
   overflow-x: auto;
   padding: 0.5em;

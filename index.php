@@ -38,7 +38,7 @@ namespace app\handler {
         {
             if (!empty($this->view)) {
                 $r = $this->getHighlight($this->view);
-                printf("<link rel=\"stylesheet\" href=\"/lib/app/styles/default.css\">
+                printf("<link rel=\"stylesheet\" href=\"/app/styles/default.css\">
                         <div><pre class=\"hljs %s\" >%s</pre></div>", $r->language, $r->value);
                 exit();
             } else if (!empty($this->empbed)) {
@@ -50,12 +50,12 @@ namespace app\handler {
                 $content = file_get_contents($this->md);
                 $content = MarkdownExtra::defaultTransform($content);
                 echo $content;
-                exit();
+                exit("<link rel=\"stylesheet\" href=\"/app/styles/default.css\">");
             } else if (!empty($this->__q__)) {
                 $content = file_get_contents($this->domain . $this->__q__);
                 $content = MarkdownExtra::defaultTransform($content);
                 echo $content;
-                exit();
+                exit("<link rel=\"stylesheet\" href=\"/app/styles/default.css\">");
             }
         }
 
