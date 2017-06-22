@@ -8,7 +8,7 @@ Embed JS code your project
 ```
 <script src="http://docs.spamjs.org?lang=js&embed=https://raw.githubusercontent.com/spamjs/spamjs.github.io/master/Gruntfile.js"></script>
 ```
-[DEMO](/app/wrap.html)
+[DEMO](http://docs.spamjs.org/app/wrap.html)
 
 ## Link to Show Code
 
