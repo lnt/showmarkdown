@@ -52,8 +52,17 @@ namespace app\handler {
                 echo $content;
                 exit("<link rel=\"stylesheet\" href=\"/app/styles/default.css\">");
             } else if (!empty($this->__q__)) {
-                $content = file_get_contents($this->domain . $this->__q__);
+                $git_file = $this->__q__;
+                $match = array();
+                if(preg_match("/(.+)\/(.+)\/blob\/(.+)\/(.+)\.md$/",$this->__q__,$match)){
+                    $git_file = sprintf("%s/%s/%s/%s.md",$match[1],$match[2],$match[3],$match[4]);
+                }
+               // exit($git_file);
+                $content = file_get_contents($this->domain . $git_file);
                 $content = MarkdownExtra::defaultTransform($content);
+                //https://github.com/boilerplatez/docs/master/markdown/xampp/ENV.md
+                //$content = preg_replace('/XAMP/', "$$$$",$content);
+                $content = preg_replace('/\<a([^>]*) href=(\'|\")https?\:\/\/github\.com([^>]*)\2\s?([^>]*)\>/i', "<a$1 href=$2$3$2 $4>",$content);
                 echo $content;
                 exit("<link rel=\"stylesheet\" href=\"/app/styles/default.css\">");
             }
