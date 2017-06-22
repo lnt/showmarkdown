@@ -5,14 +5,14 @@ Embed Remote Code file in Your webpage for documentation purpose
 ## Display Code on your website page
 Embed JS code your project
 
-```
+```html
 <script src="http://docs.spamjs.org?lang=js&embed=https://raw.githubusercontent.com/spamjs/spamjs.github.io/master/Gruntfile.js"></script>
 ```
 [DEMO](http://docs.spamjs.org/app/wrap.html)
 
 ## Link to Show Code
 
-```
+```html
 http://docs.spamjs.org/?view=https://raw.githubusercontent.com/spamjs/spamjs.github.io/master/Gruntfile.js&lang=js
 ```
 [DEMO](http://docs.spamjs.org/?view=https://raw.githubusercontent.com/spamjs/spamjs.github.io/master/Gruntfile.js&lang=js)
