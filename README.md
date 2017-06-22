@@ -6,7 +6,7 @@ Embed Remote Code file in Your webpage for documentation purpose
 Embed JS code your project
 
 ```
-<script src="http://docs.spamjs.org?lang=js&empbed=https://raw.githubusercontent.com/spamjs/spamjs.github.io/master/Gruntfile.js"></script>
+<script src="http://docs.spamjs.org?lang=js&embed=https://raw.githubusercontent.com/spamjs/spamjs.github.io/master/Gruntfile.js"></script>
 ```
 [DEMO](/app/wrap.html)
 

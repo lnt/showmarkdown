@@ -15,7 +15,7 @@ namespace app\handler {
         public $__q__ = "lnt/snipit/master/README.md";
         public $parse = true;
         public $domain = "http://raw.githubusercontent.com/";
-        public $empbed = null;
+        public $embed = null;
         public $lang = null;
         public $view = null;
         public $md = null;
