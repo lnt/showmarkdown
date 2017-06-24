@@ -41,9 +41,9 @@ namespace app\handler {
                 printf("<link rel=\"stylesheet\" href=\"/app/styles/default.css\">
                         <div><pre class=\"hljs %s\" >%s</pre></div>", $r->language, $r->value);
                 exit();
-            } else if (!empty($this->empbed)) {
+            } else if (!empty($this->embed)) {
                 header("Content-Type: application/javascript");
-                $r = $this->getHighlight($this->empbed);
+                $r = $this->getHighlight($this->embed);
                 printf("document.write('<link rel=\"stylesheet\" href=\"/app/styles/default.css\"><div><pre class=\"hljs %s\" >'+atob('%s')+'</pre></div>')", $r->language, base64_encode($r->value));
                 exit();
             } else if (!empty($this->md)) {
